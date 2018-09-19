@@ -1,2 +1,33 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="container">
+    <div class="col-md-12 text-center">
+        <h2>Blocipedia: Social, Markdown Wikis</h2>
+    </div>
+
+
+    <div class="col-md-12 text-center">
+        <h4>Create and share Markdown Wikis</h4>
+    </div>
+
+    <div class="col-md-12 text-center">
+        <button type="button" class="btn btn-outline-primary">
+        <%= button_to "Sign Up", new_user_registration_path, :class => 'navbar-link', :method => :get %>
+        </button
+    </div>
+
+    <div class="row"> 
+        <div class="col-md-6 text-right">
+            <h5>Create as many public </br> wikis as you want!</h5>
+        </div>
+        <div class="col-md-6 text-left">
+            <h5>Create private wikis!</h5>
+        </div>
+    </div>
+
+    <div class="col-md-6 text-right">
+        <button type="button" class="btn btn-primary">Free Plan</button>
+    </div>
+    <div class="col-md-6 text-left">
+        <button type="button" class="btn btn-success">Premium Plan</button>
+    </div>
+
+</div>
