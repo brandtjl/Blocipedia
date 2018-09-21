@@ -22,7 +22,9 @@
         <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
         </div>
       <% end %>
-      
+      <div>
+      <%= link_to "View Wikis", wikis_path %>
+      </div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
