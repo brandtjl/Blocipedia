@@ -1,6 +1,7 @@
 class WikisController < ApplicationController
   def index
     @wikis = Wiki.all
+    authorize @wikis
   end
 
   def show
@@ -9,6 +10,7 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    authorize @wiki
   end
 
   def create
@@ -18,6 +20,7 @@ class WikisController < ApplicationController
     # @wiki.private = params[:wiki][:private]
     @wiki = Wiki.new(wiki_params)
     @wiki.user = current_user
+    authorize @wiki
     
     if @wiki.save
       flash[:notice] = "Wiki was saved."
@@ -30,6 +33,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
   end
 
   def update
