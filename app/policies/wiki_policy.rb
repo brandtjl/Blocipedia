@@ -8,11 +8,11 @@ class WikiPolicy < ApplicationPolicy
     end
 
     def update?
-        user.admin? || user == record
+        user.admin? || user.id == record.user.id
     end
 
     def edit?
-        user.admin? || user == record
+        user.admin? || user.id == record.user.id
     end
 
     def destroy?
