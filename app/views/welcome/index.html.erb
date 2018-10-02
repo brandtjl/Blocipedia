@@ -9,9 +9,13 @@
     </div>
 
     <div class="col-md-12 text-center">
-        <button type="button" class="btn btn-outline-primary">
-        <%= button_to "Sign Up", new_user_registration_path, :class => 'navbar-link', :method => :get %>
-        </button
+        <% if current_user %>
+            <%= link_to "View Wikis", wikis_path %>
+        <% else %>
+            <button type="button" class="btn btn-outline-primary">
+            <%= button_to "Sign Up", new_user_registration_path, :class => 'navbar-link', :method => :get %>
+            </button>
+        <% end %>
     </div>
 
     <div class="row"> 
@@ -24,10 +28,14 @@
     </div>
 
     <div class="col-md-6 text-right">
-        <button type="button" class="btn btn-primary">Free Plan</button>
+        <button type="button" class="btn btn-outline-primary">
+        <%= button_to "Free Plan", new_user_registration_path, :method => :get %>
+        </button>
     </div>
     <div class="col-md-6 text-left">
-        <button type="button" class="btn btn-success">Premium Plan</button>
+        <button type="button" class="btn btn-success">
+        <%= button_to "Premium Plan", new_user_registration_path, :method => :get %>
+        </button>
     </div>
 
 </div>
