@@ -10,26 +10,27 @@
     User.create!(
     email:    Faker::Internet.email,
     password: Faker::Internet.password,
-    role: 'user'
+    role: 'user',
+    account_type: 'free'
     )
   end
+
 2.times do
     User.create!(
         email:    Faker::Internet.email,
         password: Faker::Internet.password,
-        role: 'admin'
+        role: 'admin',
+        account_type: 'premium'
         )
 end
+
 User.create!(
     email: 'jdbrandt4@hotmail.com',
     password: 'password',
-    role: 'admin'
-)
-User.create!(
-    email: 'jenibrandt@legalshieldcorp.com',
-    password: 'password',
-    role: 'user'
-)
+    role: 'admin',
+    account_type: 'premium'
+    )
+
   users = User.all
 
   25.times do
