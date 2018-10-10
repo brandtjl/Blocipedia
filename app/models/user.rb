@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   enum role: [:user, :admin]
-  enum account: [:free, :premium]
+  enum account: {free: 0, premium: 1 }
   after_initialize :set_default_role, :if => :new_record?
-  # before_save {self.account_type ||= :free }
+  before_save {self.account||= :free }
 
   def set_default_role
     self.role ||= :user

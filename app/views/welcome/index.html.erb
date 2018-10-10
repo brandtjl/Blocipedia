@@ -17,25 +17,25 @@
             </button>
         <% end %>
     </div>
+    <% if current_user %>
+        <div class="row"> 
+            <div class="col-md-6 text-right">
+                <h5>Create as many public </br> wikis as you want!</h5>
+            </div>
+            <div class="col-md-6 text-left">
+                <h5>Create private wikis!</h5>
+            </div>
+        </div>
 
-    <div class="row"> 
         <div class="col-md-6 text-right">
-            <h5>Create as many public </br> wikis as you want!</h5>
+            <button type="button" class="btn btn-outline-primary">
+            <%= button_to "Free Plan", about_path, :method => :get %>
+            </button>
         </div>
         <div class="col-md-6 text-left">
-            <h5>Create private wikis!</h5>
+            <button type="button" class="btn btn-success">
+            <%= button_to "Premium Plan", new_charge_path, :method => :get %>
+            </button>
         </div>
-    </div>
-
-    <div class="col-md-6 text-right">
-        <button type="button" class="btn btn-outline-primary">
-        <%= button_to "Free Plan", new_user_registration_path, :method => :get %>
-        </button>
-    </div>
-    <div class="col-md-6 text-left">
-        <button type="button" class="btn btn-success">
-        <%= button_to "Premium Plan", new_user_registration_path, :method => :get %>
-        </button>
-    </div>
-
+    <% end %>
 </div>

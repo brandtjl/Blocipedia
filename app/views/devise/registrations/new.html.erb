@@ -21,11 +21,13 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :type, class: 'checkbox' do %>
-    <%= f.check_box :account %> Premium Plan
-    <% end %>
-  </div>
+ <!-- # <div class="field"> -->
+      <%# = f.label :type, class: 'checkbox' do %>
+      <%# = f.check_box :account, {}, "premium", "free" %> 
+      <!-- Premium Plan -->
+      <%# end %>
+   <!-- </div> -->
+    
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

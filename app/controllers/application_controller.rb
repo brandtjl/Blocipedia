@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
    policy_name = exception.policy.class.to_s.underscore
 
    flash[:alert] = t "#{policy_name}.#{exception.query}", scope: "pundit", default: 'You are not authorized to edit this Wiki!'
-   puts "Got this error"
    redirect_to(request.referrer || root_path)
  end
 end

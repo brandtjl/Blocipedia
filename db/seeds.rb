@@ -11,7 +11,7 @@
     email:    Faker::Internet.email,
     password: Faker::Internet.password,
     role: 'user',
-    account_type: 'free'
+    account: 'free'
     )
   end
 
@@ -20,7 +20,7 @@
         email:    Faker::Internet.email,
         password: Faker::Internet.password,
         role: 'admin',
-        account_type: 'premium'
+        account: 'premium'
         )
 end
 
@@ -28,7 +28,7 @@ User.create!(
     email: 'jdbrandt4@hotmail.com',
     password: 'password',
     role: 'admin',
-    account_type: 'premium'
+    account: 'premium'
     )
 
   users = User.all
