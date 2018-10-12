@@ -10,7 +10,11 @@ class WelcomeController < ApplicationController
       @user = User.find(current_user.id)
       @user.account = 'free'
       if @user.save
-        flash[:notice] = "You have been downgraded to the Free Plan!"
+        Wiki.where(:user_id => current_user.id, :private => true).each do |wiki|
+          wiki.private = false
+          wiki.save
+        end 
+        flash[:notice] = "You have been downgraded to the Free Plan and your private wikis are no longer private!"
         redirect_to wikis_path # or wherever
       end
     end 

@@ -1,10 +1,14 @@
 <%= link_to "Back to Wikis", wikis_path %>
-
-<h1><%= @wiki.title %></h1>
+<div>
+    <h1><%= @wiki.title %></h1>
+    <% if @wiki.private == true %>
+        <p>Private</p>    
+    <% end %>
+</div>
 
 <div class="row">
-   <div class="col-md-8">
-        <p><%= @wiki.body %></p>
+    <div class="col-md-8">
+        <%= @wiki.body %>
     </div>
     <div class="col-md-4">
         <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
