@@ -41,3 +41,11 @@ User.create!(
         user: users.sample
     )
   end 
+  wikis = Wiki.all
+  
+  20.times do
+    Collaborator.create!(
+      user: users.sample,
+      wiki: wikis.sample
+    )
+  end 
