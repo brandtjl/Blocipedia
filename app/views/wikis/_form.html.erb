@@ -15,18 +15,7 @@
         Private wiki
         <% end %>
       </div>
-      <div>
-        Collaborators <br>
-        <% wikis = Collaborator.where(wiki_id: @wiki.id) %>
-        <% wikis.each do |w| %>
-          <ul>
-          <li><%= User.email.where(id: wikis.pluck(:user_id)) %></li>
-          <li><%= User.where(id: wikis.pluck(:user_id)) %></li>
-          
-          </ul> 
-        <% end %>
-
-      </div>
+      
     <% end %>
     
     <div class="form-group">
