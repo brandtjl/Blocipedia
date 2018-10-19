@@ -7,6 +7,7 @@ class WikisController < ApplicationController
     # end
     @wikis = policy_scope(Wiki)
     authorize @wikis
+    
   end
 
   def show
@@ -16,6 +17,7 @@ class WikisController < ApplicationController
   def new
     @wiki = Wiki.new
     authorize @wiki
+    @collaborators = Collaborator.new
   end
 
   def create
