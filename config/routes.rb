@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'collaborator/new'
-  get 'collaborator/create'
-  get 'collaborator/destroy'
+  # get 'collaborator/new'
+  # get 'collaborator/create'
+  # get 'collaborator/destroy'
   resources :charges, only: [:new, :create]
   resources :wikis
+  resources :collaborators
   
   devise_for :users, :controllers => { registrations: 'registrations' }
   

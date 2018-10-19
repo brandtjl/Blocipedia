@@ -17,7 +17,7 @@ class WikisController < ApplicationController
   def new
     @wiki = Wiki.new
     authorize @wiki
-    @collaborators = Collaborator.new
+    @collaborator = Collaborator.new
   end
 
   def create
@@ -41,7 +41,7 @@ class WikisController < ApplicationController
   def edit
     @wiki = Wiki.find(params[:id])
     authorize @wiki
-    @collaborators = Collaborator.where(wiki_id: @wiki.id)
+    @collaborator = Collaborator.find_by(wiki_id: @wiki.id)
   end
 
   def update
