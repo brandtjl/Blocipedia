@@ -9,8 +9,8 @@ class CollaboratorsController < ApplicationController
 
   def create
     puts params.inspect
-    user = User.find( params[:collaborator][:id] )
-    wiki = Wiki.find( params[:collaborator][:wiki_id] )
+    user = User.find_by_email(params[:collaborator][:email])
+    wiki = params[:id] 
 
     collaborator = Collaborator.new
     collaborator.user = user 
