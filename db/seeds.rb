@@ -46,6 +46,7 @@ User.create!(
   20.times do
     Collaborator.create!(
       user: users.sample,
-      wiki: wikis.sample
+      wiki: wikis.sample,
+      email: Faker::Internet.email
     )
   end 

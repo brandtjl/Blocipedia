@@ -8,12 +8,14 @@ class CollaboratorsController < ApplicationController
   end
 
   def create
-    user = User.find( params[:collaborator][:user_id] )
+    puts params.inspect
+    user = User.find( params[:collaborator][:id] )
     wiki = Wiki.find( params[:collaborator][:wiki_id] )
 
     collaborator = Collaborator.new
     collaborator.user = user 
     collaborator.wiki = wiki
+    collaborator.email = params[:collaborator][:email] 
     collaborator.save
   end
 
