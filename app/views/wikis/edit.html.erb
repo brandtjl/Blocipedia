@@ -13,9 +13,10 @@
             <%= form_for Collaborator.new do |f| %>
                 <p><%= f.text_field :email, class: 'form-control' %></p>
                 
-                <% f.hidden_field :wiki_id, :value => params[:wiki_id] %>
-                <% f.hidden_field :user_id, :value => params[:user_id] %>
-                <%= params %>
+                <%= f.hidden_field :wiki_id, :value => params[@wiki.id] %>
+                <%= f.hidden_field :user_id, :value => params[:user_id] %>
+                <%= @wiki.id %>
+                <%= @user %>
                 <%= f.submit 'Add Collaborator' %>
             <% end %>
     </div>

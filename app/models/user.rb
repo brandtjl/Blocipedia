@@ -18,7 +18,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
 
-  has_many :wikis, dependent: :destroy
+  # has_many :wikis, dependent: :destroy
 
   # def collaborators
   #   Collaborator.where(user_id: id)
