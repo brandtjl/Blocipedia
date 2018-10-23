@@ -17,7 +17,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
-
+         
+  # deleted this has_many line since the has_many-through code is above
   # has_many :wikis, dependent: :destroy
 
   # def collaborators
