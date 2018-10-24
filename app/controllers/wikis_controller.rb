@@ -6,7 +6,7 @@ class WikisController < ApplicationController
     #   @wikis = Wiki.where(private: false)
     # end
     @wikis = policy_scope(Wiki)
-    authorize @wikis
+    # authorize @wikis
     
   end
 

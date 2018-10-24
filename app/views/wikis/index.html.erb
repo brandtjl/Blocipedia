@@ -4,7 +4,11 @@
     <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
   
     <% @wikis.each do |wiki| %>
-        <p><%= link_to wiki.title, wiki_path(wiki.id) %></p>
+        <p><%= link_to wiki.title, wiki_path(wiki.id) %>
+        <%= wiki.id %>
+        <% if wiki.private %>
+            Private 
+        <% end %></p>
     <% end %>
 </div>
 <% end %>
